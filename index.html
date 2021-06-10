@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <link rel="stylesheet" href="styles.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <title>Государственный музей изобразительных искусств имени Пушкина</title>
+    </head>
+    <body>
+        <a class="header__skip-content" href="#content">
+            Перейти к контенту
+        </a>
+        <header class="header" role="banner">
+            <div class="header__container container">
+                <img
+                    class="header__logo"
+                    role="logo"
+                    src="images/logo.png"
+                    alt="Логотип музея изобразительных искусств имени Пушкина"
+                >
+                <div class="header__row">
+                    <form class="header__search" role="search" aria-label="Поиск">
+                        <input
+                            class="header__search-input"
+                            type="search"
+                            aria-label="Введите поисковый запрос"
+                        >
+                        <button type="submit" class="header__search-button" title="Искать">
+                            <img src="images/search.png" alt="" role="presentation">
+                        </button>
+                    </form>
+                    <nav class="header__language" aria-label="Выбрать язык" role="navigation">
+                        <span class="header__language-button active">
+                            <span aria-hidden="true">RU</span>
+                            <span class="visually-hidden">Русский</span>
+                        </span>
+                        <a
+                            class="header__language-button"
+                            href="/en"
+                            hreflang="en"
+                            aria-label="English"
+                        >EN</a>
+                    </nav>
+                    <button
+                        class="header__login-button"
+                        aria-haspopup="dialog"
+                        id="dialog-button-open"
+                        title="Войти в личный кабинет"
+                    >
+                        <img src="images/login.png" alt="" role="presentation">
+                    </button>
+                </div>
+            </div>
+        </header>
+        <nav role="nav" class="nav container" aria-label="Главное меню">
+            <div class="nav__menu" role="menu">
+                <a role="menuitem" class="nav__menu-item" href="#exhibitions">Выставки и события</a>
+                <a role="menuitem" class="nav__menu-item" href="#museum">Музей</a>
+                <a role="menuitem" class="nav__menu-item" href="/visitors">Посетителям</a>
+                <a role="menuitem" class="nav__menu-item" href="/tickets">Купить билет</a>
+                <a role="menuitem" class="nav__menu-item" href="/friendship">Стать другом</a>
+                <a role="menuitem" class="nav__menu-item" href="/online-shop">Онлайн-магазин</a>
+            </div>
+        </nav>
+        <main role="main" id="content" class="container" tabindex="-1">
+            <section aria-labelledby="exhibitions" class="exhibitions">
+                <h2 id="exhibitions">Выставки и события</h2>
+                <div class="exhibitions__filters" aria-label="Фильтр выставок и событий" aria-controls="exhibition-list">
+                    <button
+                        class="exhibitions__filter-item active"
+                        type="button"
+                        aria-selected="true"
+                        data-id="all"
+                        tabindex="0"
+                    >
+                        Все
+                    </button>
+                    <button
+                        class="exhibitions__filter-item"
+                        type="button"
+                        aria-selected="false"
+                        data-id="today"
+                        tabindex="-1"
+                    >
+                        Сегодня
+                    </button>
+                    <button
+                        class="exhibitions__filter-item"
+                        type="button"
+                        aria-selected="false"
+                        data-id="tomorrow"
+                        tabindex="-1"
+                    >
+                        Завтра
+                    </button>
+                </div>
+                <ul class="exhibition__list"  id="exhibition-list" aria-label="Список всех выставок и событий">
+                    <li class="exhibition__list-item" data-id="all">
+                        <img src="images/exhibitions/richter.png" alt="" role="presentation">
+                        <h3>Святослав Рихтер в кругу друзей. Москва — Коктебель</h3>
+                        <div id="date1">до 20 ноября</div>
+                        <div class="visually-hidden" id="action">Купить билет на выставку</div>
+                        <a href="/tickets" aria-labelledby="action date1">Купить билет</a>
+                    </li>
+                    <li class="exhibition__list-item" data-id="today">
+                        <img src="images/exhibitions/tatoo.png" alt="" role="presentation">
+                        <h3>Тату</h3>
+                        <div id="date2">до 27 сентября</div>
+                        <div class="visually-hidden" id="action">Купить билет на выставку</div>
+                        <a href="/tickets" aria-labelledby="action date2">Купить билет</a>
+                    </li>
+                    <li class="exhibition__list-item" data-id="tomorrow">
+                        <img src="images/exhibitions/matisse.png" alt="" role="presentation">
+                        <h3>От Дюрера до Матисса. Избранные рисунки из собрания ГМИИ им. А.С. Пушкина</h3>
+                        <div id="date3">до 1 ноября</div>
+                        <div class="visually-hidden" id="action">Купить билет на выставку</div>
+                        <a href="/tickets" aria-labelledby="action date3">Купить билет</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="museum" aria-labelledby="museum">
+                <h2 id="museum">Музей</h2>
+                <div class="museum__tabs" role="tabpanel">
+                    <button
+                        class="museum__tab active"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="building-tab"
+                        id="buildings"
+                        tabindex="0"
+                    >
+                        Здания
+                    </button>
+                    <button
+                        class="museum__tab"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="history-tab"
+                        id="history"
+                        tabindex="-1"
+                    >
+                        История
+                    </button>
+                </div>
+                <div
+                    class="museum__content active"
+                    id="building-tab"
+                    tabindex="0"
+                    role="tabpanel"
+                    aria-labelledby="buildings"
+                >
+                    <ul class="museum__list">
+                        <li class="museum__list-item" aria-labelledby="richter address">
+                            <img src="images/buildings/richter.png" role="presentation" alt="">
+                            <h3 id="richter" role="presentation">МЕМОРИАЛЬНАЯ КВАРТИРА С.Т. РИХТЕРА</h3>
+                            <div id="address">ул. Большая Бронная, 2/6, 16 этаж, кв. 58</div>
+                            <a href="buildings/richter" aria-label="Подробнее о мемориальной квартире Рихтера">Подробнее</a>
+                        </li>
+                        <li class="museum__list-item" aria-labelledby="museion address">
+                            <img src="images/buildings/museion.png" role="presentation" alt="">
+                            <h3 id="museion" role="presentation">ЦЭВ «МУСЕЙОН»</h3>
+                            <div id="address">Колымажный пер., 6/2, 3 (вход с Малого Знаменского переулка)</div>
+                            <a href="buildings/museion" aria-label="Подробнее о ЦЭВ «МУСЕЙОН»">Подробнее</a>
+                        </li>
+                        <li class="museum__list-item" aria-labelledby="lopuhinyx address">
+                            <img src="images/buildings/lopuhinyx.png" role="presentation" alt="">
+                            <h3 id="lopuhinyx" role="presentation">УСАДЬБА ЛОПУХИНЫХ</h3>
+                            <div id="address">Малый Знаменский пер., 3/5с4</div>
+                            <a href="buildings/lopuhinyx" aria-label="Подробнее о УСАДЬБЕ ЛОПУХИНЫХ">Подробнее</a>
+                        </li>
+                        <li class="museum__list-item" aria-labelledby="study address">
+                            <img src="images/buildings/study.png" role="presentation" alt="">
+                            <h3 id="study" role="presentation">УЧЕБНЫЙ МУЗЕЙ</h3>
+                            <div id="address">ул. Чаянова, 15</div>
+                            <a href="buildings/study" aria-label="Подробнее о УЧЕБНОМ МУЗЕЕ">Подробнее</a>
+                        </li>
+                        <li class="museum__list-item" aria-labelledby="personal address">
+                            <img src="images/buildings/personal.png" role="presentation" alt="">
+                            <h3 id="personal" role="presentation">ОТДЕЛ ЛИЧНЫХ КОЛЛЕКЦИЙ</h3>
+                            <div id="address">ул. Волхонка, 10</div>
+                            <a href="buildings/personal" aria-label="Подробнее об ОТДЕЛЕ ЛИЧНЫХ КОЛЛЕКЦИЙ">Подробнее</a>
+                        </li>
+                        <li class="museum__list-item" aria-labelledby="gallary address">
+                            <img src="images/buildings/gallary.png" role="presentation" alt="">
+                            <h3 id="gallary" role="presentation">ГАЛЕРЕЯ</h3>
+                            <div id="address">ул. Волхонка, 14</div>
+                            <a href="buildings/gallary" aria-label="Подробнее о ГАЛЕРЕЕ">Подробнее</a>
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="museum__content"
+                    id="history-tab"
+                    tabindex="-1"
+                    role="tabpanel"
+                    aria-labelledby="history"
+                >
+                    <p>Государственный музей изобразительных искусств имени А.С. Пушкина – одно из крупнейших в России художественных собраний зарубежного искусства с древнейших времен до наших дней.</p>
+
+                    <p>В современной экспозиции представлены обширная учебная коллекция тонированных гипсовых слепков с произведений Античности, Средних веков и эпохи Возрождения, а также собрание подлинных произведений живописи, скульптуры, графики и декоративно-прикладного искусства.</p>
+
+                    <p>В залах первого этажа Главного здания представлены: произведения искусства Древнего Египта, Античности, собрание европейской живописи VIII–XVIII веков; два зала – Итальянский и Греческий дворики – занимают слепки. На втором этаже Главного здания в залах размещены слепки произведений искусства Древней Греции, Рима, Средних веков и Возрождения.</p>
+
+                    <p>В начале 2017 года музей определил новое направление своей деятельности – Пушкинский XXI, – ориентированное на современное российское и западное искусство во всех аспектах – выставочном, образовательном и исследовательском. Таким образом, ГМИИ им. А.С. Пушкина представляет собой открытую, интерактивную сцену, демонстрирующую развитие мировой культуры с древности до наших дней, живое, знакомое с детства пространство для получения знаний и общения.</p>
+                    <a href="/history" aria-label="Подробнее об истории музея">Читать далее.</a>
+                </div>
+            </section>
+            <section aria-labelledby="online-broadcasts" class="online-broadcasts">
+                <h2 id="online-broadcasts">Онлайн-трансляции</h2>
+                <iframe
+                    src="https://www.youtube.com/embed/5qRR-5H1XgU"
+                    title="Ай Вейвей: движение к общечеловеческому"
+                    width="1030"
+                    height="600"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                ></iframe>
+            </section>
+            <section aria-labelledby="live-lectures" class="live-lectures">
+                <h2 id="live-lectures">Экскурсии и лекции в прямом эфире</h2>
+                <p>
+                    С 1 июля вы можете присоединиться к нашим виртуальным мероприятиям — экскурсиям и лекциям для взрослых и детей, оплатив участие на сайте. Встречи будут проходить в прямом эфире на платформе Zoom; предусмотрен формат живого общения с возможностью задавать вопросы экскурсоводу (лектору).
+                    <a href="/pay" aria-label="Подробнее об оплате виртуальных мероприятий">Подробнее.</a>
+                </p>
+
+            </section>
+        </main> 
+        <footer class="footer" role="contentinfo" >
+            <div class="footer__container container">
+                <div class="footer__col">
+                    <a class="footer__link" href="/disabilities">Посетителям с ограниченными возможностями</a>
+                    <a class="footer__link" href="/tickets">Билеты и льготы</a>
+                    <a class="footer__link" href="/corruption">Противодействие коррупции</a>
+
+                    <div class="footer__social">
+                        <h3 id="social">Соцсети</h3>
+                        <nav aria-labelledby="social" role="navigation">
+                            <a class="footer__social-link" href="mailto:pushkinmuseum@mail.com" aria-label="Отправить письмо">
+                                <img src="images/social/mail.png" alt="" role="presentation">
+                            </a>
+                            <a class="footer__social-link" href="t.me/nlopin" aria-label="Канал Пушкинского музея в Телеграме">
+                                <img src="images/social/tg.png" alt="" role="presentation">
+                            </a>
+                            <a class="footer__social-link" href="facebook.com" aria-label="Страница Пушкинского музея в Фейсбуке">
+                                <img src="images/social/fb.png" alt="" role="presentation">
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <h3 id="subscription">Подписка на новости</h3>
+                    <form aria-labelledby="subscription">
+                        <label class="footer__label" for="email">Введите e-mail</label>
+                        <div class="footer__row">
+                            <input class="footer__input" type="email" id="email" placeholder="E-mail" required aria-required="true" autocomplete="email">
+                            <button class="footer__button" type="submit">Подписаться</button>
+                        </div>
+                        <div class="footer__row">
+                            <input class="footer__checkbox" id="accept" type="checkbox" required aria-required="true">
+                            <label class="footer__checkbox-label" for="accept">Согласен на обработку персональных данных</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </footer>
+
+        <div id="dialog-overlay" class="overlay hidden"></div>
+        <div role="dialog" aria-labelledby="modal-title" aria-modal="true" tab-index="-1" id="dialog" class="dialog hidden">
+            <button class="dialog__button-close" id="dialog-button-close">Закрыть окно</button>
+            <h2 id="modal-title" class="dialog__title">Вход</h2>
+            <form class="dialog__form" aria-labelledby="modal-title">
+                <label for="username" class="dialog__form-label">Логин</label>
+                <input type="text" id="username" class="dialog__form-input" placeholder="Введите логин">
+                <label for="password" class="dialog__form-label" >Пароль</label>
+                <input type="password" id="password" class="dialog__form-input" placeholder="Введите пароль">
+                <button type="submit" class="dialog__form-button" id="dialog-button-submit">Войти</button>
+            </form>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
