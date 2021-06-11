@@ -1,6 +1,32 @@
 const hiddenClass = "hidden";
 const activeClass = "active";
 
+// carousel
+const slides = Array.from(document.querySelectorAll(".carousel__slide-item"));
+const previousButton = document.querySelector("#previous");
+const nextButton = document.querySelector("#next");
+const slideIndex = [1, 1];
+
+plusSlides = (n, no) => showSlides((slideIndex[no] += n), no);
+
+showSlides = (n, no) => {
+  if (n > slides.length) {
+    slideIndex[no] = 1;
+  }
+  if (n < 1) {
+    slideIndex[no] = slides.length;
+  }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    slides[i].setAttribute("aria-hidden", "true");
+  }
+  slides[slideIndex[no] - 1].style.display = "block";
+  slides[slideIndex[no] - 1].setAttribute("aria-hidden", "false");
+};
+
+previousButton.addEventListener("click", () => plusSlides(-1, 0));
+nextButton.addEventListener("click", () => plusSlides(1, 0));
+
 // filters
 const exhibitionFilters = document.querySelectorAll(".exhibitions__filter");
 const exhibitionContainers = document.querySelectorAll(
