@@ -11,7 +11,7 @@
         <a class="header__skip-content" href="#content">
             Перейти к контенту
         </a>
-        <header class="header" role="banner">
+        <header class="header">
             <div class="header__container container">
                 <img
                     class="header__logo"
@@ -113,8 +113,8 @@
                 <div class="exhibitions__filters" aria-label="Фильтр выставок и событий" aria-controls="exhibition-list">
                     <button
                         class="exhibitions__filter active"
-                        type="button"
-                        aria-selected="true"
+                        role="checkbox"
+                        checked="true"
                         data-id="all"
                         tab-index="0"
                     >
@@ -122,8 +122,8 @@
                     </button>
                     <button
                         class="exhibitions__filter"
-                        type="button"
-                        aria-selected="false"
+                        role="checkbox"
+                        checked="false"
                         data-id="today"
                         tab-index="-1"
                     >
@@ -131,8 +131,8 @@
                     </button>
                     <button
                         class="exhibitions__filter"
-                        type="button"
-                        aria-selected="false"
+                        role="checkbox"
+                        checked="false"
                         data-id="tomorrow"
                         tab-index="-1"
                     >
@@ -163,7 +163,7 @@
             </section>
             <section class="museum" aria-labelledby="museum">
                 <h2 id="museum">Музей</h2>
-                <div class="museum__tabs" role="tabpanel">
+                <div class="museum__tabs" role="tablist">
                     <a
                         id="buildings"
                         href="#building-tab"
@@ -313,10 +313,10 @@
             <h2 id="modal-title" class="dialog__title">Вход</h2>
             <form class="dialog__form" aria-labelledby="modal-title">
                 <label for="username" class="dialog__form-label">Логин</label>
-                <input type="text" id="username" class="dialog__form-input" placeholder="Введите логин" required aria-required="true" aria-describedby="username-error">
+                <input type="text" id="username" class="dialog__form-input" placeholder="Введите логин" required aria-describedby="username-error">
                 <p class="dialog__form-status" id="username-error" role="status" aria-live="polite"></p>
                 <label for="password" class="dialog__form-label" >Пароль</label>
-                <input type="password" id="password" class="dialog__form-input" placeholder="Введите пароль" required aria-required="true" aria-describedby="password-error">
+                <input type="password" id="password" class="dialog__form-input" placeholder="Введите пароль" required aria-describedby="password-error">
                 <p class="dialog__form-status" id="password-error" role="status" aria-live="polite"></p>
                 <button type="submit" class="dialog__form-button" id="dialog-button-submit">Войти</button>
                 <div class="visually-hidden" id="formInstruction">Форма отправлена</div>

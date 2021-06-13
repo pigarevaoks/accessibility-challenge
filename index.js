@@ -48,10 +48,10 @@ exhibitionFilters.forEach((filter) => {
 filterChange = (currentFilter) => {
   exhibitionFilters.forEach((filter) => {
     filter.classList.remove(activeClass);
-    filter.setAttribute("aria-selected", "false");
+    filter.setAttribute("checked", "false");
   });
   currentFilter.classList.add(activeClass);
-  currentFilter.setAttribute("aria-selected", "true");
+  currentFilter.setAttribute("checked", "true");
 
   exhibitionContainers.forEach((container) => {
     const filterBy = currentFilter.dataset.id;

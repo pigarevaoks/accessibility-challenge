@@ -239,10 +239,6 @@ body {
     width: var(--main-width);
 }
 
-/* .carousel__slide-item[aria-hidden=false] .carousel__link  {
-    display: none;
-} */
-
 .carousel__link {
     font-size: 18px;
     padding: 12px 30px;
