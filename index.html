@@ -15,7 +15,6 @@
             <div class="header__container container">
                 <img
                     class="header__logo"
-                    role="logo"
                     src="images/logo.png"
                     alt="Логотип музея изобразительных искусств имени Пушкина"
                 >
@@ -30,7 +29,7 @@
                             <img src="images/search.png" alt="" role="presentation">
                         </button>
                     </form>
-                    <nav class="header__language" aria-label="Выбрать язык" role="navigation">
+                    <nav class="header__language" aria-label="Выбрать язык">
                         <span class="header__language-button active">
                             <span aria-hidden="true">RU</span>
                             <span class="visually-hidden">Русский</span>
@@ -53,7 +52,7 @@
                 </div>
             </div>
         </header>
-        <nav role="nav" class="nav container" aria-label="Главное меню">
+        <nav class="nav container" aria-label="Главное меню">
             <div class="nav__menu" role="menu">
                 <a role="menuitem" class="nav__menu-item" href="#exhibitions">Выставки и события</a>
                 <a role="menuitem" class="nav__menu-item" href="#museum">Музей</a>
@@ -73,6 +72,7 @@
                         type="button"
                         id="previous"
                         aria-label="Предыдущий слайд"
+                        tab-index="0"
                     >
                         <img src="images/carousel/controls/prev.png" alt="" role="presentation">
                     </button>
@@ -81,6 +81,7 @@
                         type="button"
                         id="next"
                         aria-label="Следующий слайд"
+                        tab-index="-1"
                     >
                         <img src="images/carousel/controls/next.png" alt="" role="presentation">
                     </button>
@@ -88,17 +89,17 @@
                 </fieldset>
                 <div id="action" class="visually-hidden" role="presentation">Купить билет онлайн на</div>
                 <ul class="carousel__slides" aria-live="polite">
-                    <li class="carousel__slide-item" aria-hidden="false" role="group" aria-roledescription="slide" aria-label="1 of 3">
+                    <li class="carousel__slide-item" aria-label="1 of 3">
                         <img src="images/carousel/musayon.png" alt="" role="presentation">
                         <div id="exhibition1" class="visually-hidden" role="presentation">Летнюю программу «Мусейона»</div>
                         <a class="carousel__link" aria-labelledby="action exhibition1" href="/tickets">Билеты онлайн</a>
                     </li>
-                    <li class="carousel__slide-item" aria-hidden="true" role="group" aria-roledescription="slide" aria-label="2 of 3">
+                    <li class="carousel__slide-item" aria-label="2 of 3">
                         <img src="images/carousel/notpainting.png" alt="" role="presentation">
                         <div id="exhibition2" class="visually-hidden" role="presentation">Выставку не живопись. Декоративно-прикладное искусство.</div>
                         <a class="carousel__link" aria-labelledby="action exhibition2" href="/tickets">Билеты онлайн</a>
                     </li>
-                    <li class="carousel__slide-item" aria-hidden="true" role="group" aria-roledescription="slide" aria-label="2 of 3">
+                    <li class="carousel__slide-item" aria-label="2 of 3">
                         <img src="images/carousel/renaissance.png" alt="" role="presentation">
                         <div id="exhibition3" class="visually-hidden" role="presentation">Выставку Сиена на заре ренесанса.</div>
                         <a class="carousel__link" aria-labelledby="action exhibition3" href="/tickets">Билеты онлайн</a>
@@ -106,7 +107,7 @@
                 </ul>
             </div>
         </section>
-        <main role="main" id="content" class="container" tabindex="-1">
+        <main id="content" class="container" tab-index="-1">
             <section aria-labelledby="exhibitions" class="exhibitions">
                 <h2 id="exhibitions">Выставки и события</h2>
                 <div class="exhibitions__filters" aria-label="Фильтр выставок и событий" aria-controls="exhibition-list">
@@ -115,7 +116,7 @@
                         type="button"
                         aria-selected="true"
                         data-id="all"
-                        tabindex="0"
+                        tab-index="0"
                     >
                         Все
                     </button>
@@ -124,7 +125,7 @@
                         type="button"
                         aria-selected="false"
                         data-id="today"
-                        tabindex="-1"
+                        tab-index="-1"
                     >
                         Сегодня
                     </button>
@@ -133,101 +134,101 @@
                         type="button"
                         aria-selected="false"
                         data-id="tomorrow"
-                        tabindex="-1"
+                        tab-index="-1"
                     >
                         Завтра
                     </button>
                 </div>
+                <div class="visually-hidden" id="exhibitionAction">Купить билет на выставку</div>
                 <ul class="exhibition__list"  id="exhibition-list" aria-label="Список всех выставок и событий">
                     <li class="exhibition__list-item" data-id="all">
                         <img src="images/exhibitions/richter.png" alt="" role="presentation">
                         <h3>Святослав Рихтер в кругу друзей. Москва — Коктебель</h3>
                         <div id="date1">до 20 ноября</div>
-                        <div class="visually-hidden" id="action">Купить билет на выставку</div>
-                        <a href="/tickets" aria-labelledby="action date1">Купить билет</a>
+                        <a href="/tickets" aria-labelledby="exhibitionAction date1">Купить билет</a>
                     </li>
                     <li class="exhibition__list-item" data-id="today">
                         <img src="images/exhibitions/tatoo.png" alt="" role="presentation">
                         <h3>Тату</h3>
                         <div id="date2">до 27 сентября</div>
-                        <div class="visually-hidden" id="action">Купить билет на выставку</div>
-                        <a href="/tickets" aria-labelledby="action date2">Купить билет</a>
+                        <a href="/tickets" aria-labelledby="exhibitionAction date2">Купить билет</a>
                     </li>
                     <li class="exhibition__list-item" data-id="tomorrow">
                         <img src="images/exhibitions/matisse.png" alt="" role="presentation">
                         <h3>От Дюрера до Матисса. Избранные рисунки из собрания ГМИИ им. А.С. Пушкина</h3>
                         <div id="date3">до 1 ноября</div>
-                        <div class="visually-hidden" id="action">Купить билет на выставку</div>
-                        <a href="/tickets" aria-labelledby="action date3">Купить билет</a>
+                        <a href="/tickets" aria-labelledby="exhibitionAction date3">Купить билет</a>
                     </li>
                 </ul>
             </section>
             <section class="museum" aria-labelledby="museum">
                 <h2 id="museum">Музей</h2>
                 <div class="museum__tabs" role="tabpanel">
-                    <button
+                    <a
+                        id="buildings"
+                        href="#building-tab"
                         class="museum__tab active"
                         role="tab"
                         aria-selected="true"
                         aria-controls="building-tab"
-                        id="buildings"
-                        tabindex="0"
+                        tab-index="0"
                     >
                         Здания
-                    </button>
-                    <button
+                    </a>
+                    <a
+                        id="history"
+                        href="#history-tab"
                         class="museum__tab"
                         role="tab"
                         aria-selected="false"
                         aria-controls="history-tab"
-                        id="history"
-                        tabindex="-1"
+                        tab-index="-1"
                     >
                         История
-                    </button>
+                    </a>
                 </div>
                 <div
                     class="museum__content active"
                     id="building-tab"
-                    tabindex="0"
                     role="tabpanel"
                     aria-labelledby="buildings"
+                    tab-index="0"
                 >
                     <ul class="museum__list">
-                        <li class="museum__list-item" aria-labelledby="richter address">
+                        <li class="museum__list-item">
                             <img src="images/buildings/richter.png" role="presentation" alt="">
-                            <h3 id="richter" role="presentation">МЕМОРИАЛЬНАЯ КВАРТИРА С.Т. РИХТЕРА</h3>
-                            <div id="address">ул. Большая Бронная, 2/6, 16 этаж, кв. 58</div>
+                            <h3 id="richter">МЕМОРИАЛЬНАЯ КВАРТИРА С.Т. РИХТЕРА</h3>
+                            <div>ул. Большая Бронная, 2/6, 16 этаж, кв. 58</div>
                             <a href="buildings/richter" aria-label="Подробнее о мемориальной квартире Рихтера">Подробнее</a>
                         </li>
-                        <li class="museum__list-item" aria-labelledby="museion address">
+                        <li class="museum__list-item">
                             <img src="images/buildings/museion.png" role="presentation" alt="">
-                            <h3 id="museion" role="presentation">ЦЭВ «МУСЕЙОН»</h3>
-                            <div id="address">Колымажный пер., 6/2, 3 (вход с Малого Знаменского переулка)</div>
+                            <h3 id="museion">ЦЭВ «МУСЕЙОН»</h3>
+                            <div>Колымажный пер., 6/2, 3 (вход с Малого Знаменского переулка)</div>
                             <a href="buildings/museion" aria-label="Подробнее о ЦЭВ «МУСЕЙОН»">Подробнее</a>
                         </li>
-                        <li class="museum__list-item" aria-labelledby="lopuhinyx address">
+                        <li class="museum__list-item">
                             <img src="images/buildings/lopuhinyx.png" role="presentation" alt="">
-                            <h3 id="lopuhinyx" role="presentation">УСАДЬБА ЛОПУХИНЫХ</h3>
-                            <div id="address">Малый Знаменский пер., 3/5с4</div>
+                            <h3 id="lopuhinyx">УСАДЬБА ЛОПУХИНЫХ</h3>
+                            <div>Малый Знаменский пер., 3/5с4</div>
                             <a href="buildings/lopuhinyx" aria-label="Подробнее о УСАДЬБЕ ЛОПУХИНЫХ">Подробнее</a>
                         </li>
-                        <li class="museum__list-item" aria-labelledby="study address">
+                        <li class="museum__list-item">
                             <img src="images/buildings/study.png" role="presentation" alt="">
-                            <h3 id="study" role="presentation">УЧЕБНЫЙ МУЗЕЙ</h3>
-                            <div id="address">ул. Чаянова, 15</div>
+                            <h3 id="study">УЧЕБНЫЙ МУЗЕЙ</h3>
+                            <div>ул. Чаянова, 15</div>
                             <a href="buildings/study" aria-label="Подробнее о УЧЕБНОМ МУЗЕЕ">Подробнее</a>
                         </li>
-                        <li class="museum__list-item" aria-labelledby="personal address">
+                        <li class="museum__list-item">
                             <img src="images/buildings/personal.png" role="presentation" alt="">
-                            <h3 id="personal" role="presentation">ОТДЕЛ ЛИЧНЫХ КОЛЛЕКЦИЙ</h3>
-                            <div id="address">ул. Волхонка, 10</div>
+                            <h3 id="personal">ОТДЕЛ ЛИЧНЫХ КОЛЛЕКЦИЙ</h3>
+                            <div>ул. Волхонка, 10</div>
                             <a href="buildings/personal" aria-label="Подробнее об ОТДЕЛЕ ЛИЧНЫХ КОЛЛЕКЦИЙ">Подробнее</a>
                         </li>
-                        <li class="museum__list-item" aria-labelledby="gallary address">
+                        <li class="museum__list-item">
                             <img src="images/buildings/gallary.png" role="presentation" alt="">
-                            <h3 id="gallary" role="presentation">ГАЛЕРЕЯ</h3>
-                            <div id="address">ул. Волхонка, 14</div>
+                            <h3 id="gallary">ГАЛЕРЕЯ</h3>
+                            <div>ул. Волхонка, 14</div>
                             <a href="buildings/gallary" aria-label="Подробнее о ГАЛЕРЕЕ">Подробнее</a>
                         </li>
                     </ul>
@@ -235,7 +236,7 @@
                 <div
                     class="museum__content"
                     id="history-tab"
-                    tabindex="-1"
+                    tab-index="-1"
                     role="tabpanel"
                     aria-labelledby="history"
                 >
@@ -277,7 +278,7 @@
 
                     <div class="footer__social">
                         <h3 id="social">Соцсети</h3>
-                        <nav aria-labelledby="social" role="navigation">
+                        <nav aria-labelledby="social">
                             <a class="footer__social-link" href="mailto:pushkinmuseum@mail.com" aria-label="Отправить письмо">
                                 <img src="images/social/mail.png" alt="" role="presentation">
                             </a>
@@ -291,32 +292,34 @@
                     </div>
                 </div>
                 <div class="footer__col">
-                    <h3 id="subscription">Подписка на новости</h3>
-                    <form aria-labelledby="subscription">
-                        <label class="footer__label" for="email">Введите e-mail</label>
+                    <h3>Подписка на новости</h3>
+                    <form aria-label="Нужно согласиться на обработку персональных данных, иначе не получится подписаться на новости музея">
                         <div class="footer__row">
-                            <input class="footer__input" type="email" id="email" placeholder="E-mail" required aria-required="true" autocomplete="email">
-                            <button class="footer__button" type="submit">Подписаться</button>
+                            <input class="footer__checkbox" id="accept" type="checkbox" required>
+                            <label class="footer__checkbox-label" for="accept">Согласен на обработку персональных данных</label>
                         </div>
                         <div class="footer__row">
-                            <input class="footer__checkbox" id="accept" type="checkbox" required aria-required="true">
-                            <label class="footer__checkbox-label" for="accept">Согласен на обработку персональных данных</label>
+                            <input class="footer__input" type="email" id="email" required autocomplete="email">
+                            <label class="footer__label" for="email">Введите e-mail</label>
+                            <button class="footer__button" type="submit">Подписаться</button>
                         </div>
                     </form>
                 </div>
             </div>
         </footer>
 
-        <div id="dialog-overlay" class="overlay hidden"></div>
         <div role="dialog" aria-labelledby="modal-title" aria-modal="true" tab-index="-1" id="dialog" class="dialog hidden">
             <button class="dialog__button-close" id="dialog-button-close">Закрыть окно</button>
             <h2 id="modal-title" class="dialog__title">Вход</h2>
             <form class="dialog__form" aria-labelledby="modal-title">
                 <label for="username" class="dialog__form-label">Логин</label>
-                <input type="text" id="username" class="dialog__form-input" placeholder="Введите логин">
+                <input type="text" id="username" class="dialog__form-input" placeholder="Введите логин" required aria-required="true" aria-describedby="username-error">
+                <p class="dialog__form-status" id="username-error" role="status" aria-live="polite"></p>
                 <label for="password" class="dialog__form-label" >Пароль</label>
-                <input type="password" id="password" class="dialog__form-input" placeholder="Введите пароль">
+                <input type="password" id="password" class="dialog__form-input" placeholder="Введите пароль" required aria-required="true" aria-describedby="password-error">
+                <p class="dialog__form-status" id="password-error" role="status" aria-live="polite"></p>
                 <button type="submit" class="dialog__form-button" id="dialog-button-submit">Войти</button>
+                <div class="visually-hidden" id="formInstruction">Форма отправлена</div>
             </form>
         </div>
 

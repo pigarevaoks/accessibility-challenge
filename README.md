@@ -2,6 +2,8 @@
 
 https://pigarevaoks.github.io/accessibility-challenge/
 
+### Задание
+
 [Ссылка на макет в Фигме](https://www.figma.com/file/TAuhy5Uaoh6VSyhwB9RDxU/Digital-Accessibility---task-for-developers?node-id=0%3A1)
 
 1. Cверстать основной layout (структура страницы)
