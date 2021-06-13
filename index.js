@@ -48,10 +48,8 @@ exhibitionFilters.forEach((filter) => {
 filterChange = (currentFilter) => {
   exhibitionFilters.forEach((filter) => {
     filter.classList.remove(activeClass);
-    filter.setAttribute("checked", "false");
+    filter.setAttribute("selected", "false");
   });
-  currentFilter.classList.add(activeClass);
-  currentFilter.setAttribute("checked", "true");
 
   exhibitionContainers.forEach((container) => {
     const filterBy = currentFilter.dataset.id;
@@ -62,6 +60,8 @@ filterChange = (currentFilter) => {
       container.classList.add(hiddenClass);
     }
   });
+  currentFilter.classList.add(activeClass);
+  currentFilter.setAttribute("selected", "true");
 };
 
 // tabs
